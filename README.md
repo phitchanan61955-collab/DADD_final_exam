@@ -107,3 +107,12 @@ http://localhost:8080
 - Use an existing account in the database
 - (or register a new account if registration is implemented).
 
+## ER Diagram (3rd Normal Form)
+
+![ER Diagram](ER%20Diagram.png)
+
+
+
+
+
+
