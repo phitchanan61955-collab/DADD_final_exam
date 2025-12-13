@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+
+    <p><a href="/intermediate-regions">← Back to Intermediate Region List</a></p>
+
+    {{#if isAdd}}
+      <form action="/intermediate-regions/add" method="post">
+    {{else}}
+      <form action="/intermediate-regions/{{intermediate_region.intermediate_region_id}}/edit" method="post">
+    {{/if}}
+
+      {{#unless isAdd}}
+        <p>
+          <label>Intermediate Region ID:</label><br>
+          <input type="text" value="{{intermediate_region.intermediate_region_id}}" readonly>
+        </p>
+      {{/unless}}
+
+      <p>
+        <label>Intermediate Region Name:</label><br>
+        <input type="text" name="intermediate_region_name"
+               value="{{intermediate_region.intermediate_region_name}}">
+      </p>
+
+      <p>
+        <label>Sub-Region:</label><br>
+        <select name="sub_region_id">
+          <option value="">-- Select Sub-Region --</option>
+          {{#each subregions}}
+            <option value="{{this.sub_region_id}}"
+              {{#ifEquals this.sub_region_id ../intermediate_region.sub_region_id}}selected{{/ifEquals}}>
+              {{this.sub_region_name}} (ID: {{this.sub_region_id}})
+            </option>
+          {{/each}}
+        </select>
+      </p>
+
+      <p>
+        <button type="submit">
+          {{#if isAdd}}Create{{else}}Update{{/if}}
+        </button>
+      </p>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{{title}}</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Your CSS -->
+  <link href="/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+  <!-- Top bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-semibold" href="/">DADD Dashboard</a>
+      <div class="ms-auto">
+        <a href="/" class="btn btn-outline-light btn-sm">← Back to Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+
+    <!-- Header -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+      <div>
+        <h1 class="h3 mb-1">Admin Panel</h1>
+        <p class="text-muted mb-0">Manage master data and DADD records.</p>
+      </div>
+
+      <div class="d-flex flex-wrap gap-2">
+        <!-- (optional buttons here) -->
+      </div>
+    </div>
+
+    <!-- ========================= -->
+    <!-- Section A: Master Data -->
+    <!-- ========================= -->
+    <div class="section-box mb-4">
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="badge badge-soft b-green">Master Data</span>
+        <div class="fw-semibold">Reference Tables</div>
+      </div>
+      <p class="text-muted small mb-3">
+        These tables support analytics & relationships.
+      </p>
+
+      <div class="row g-3">
+        <!-- Region -->
+        <div class="col-12 col-md-6 col-xl-4">
+          <a href="/regions" class="text-decoration-none text-reset d-block h-100">
+            <div class="cardx h-100">
+              <div class="card-body">
+                <span class="badge badge-soft b-green">Admin</span>
+                <h5 class="mt-2 mb-1">Region Management</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Sub-Region -->
+        <div class="col-12 col-md-6 col-xl-4">
+          <a href="/subregions" class="text-decoration-none text-reset d-block h-100">
+            <div class="cardx h-100">
+              <div class="card-body">
+                <span class="badge badge-soft b-green">Admin</span>
+                <h5 class="mt-2 mb-1">Sub-Region Management</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Intermediate Region -->
+        <div class="col-12 col-md-6 col-xl-4">
+          <a href="/intermediate-regions" class="text-decoration-none text-reset d-block h-100">
+            <div class="cardx h-100">
+              <div class="card-body">
+                <span class="badge badge-soft b-green">Admin</span>
+                <h5 class="mt-2 mb-1">Intermediate Region Management</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================= -->
+    <!-- Section B: Exam Features -->
+    <!-- ========================= -->
+    <div class="section-box">
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="badge badge-soft b-indigo">Features</span>
+        <div class="fw-semibold">DADD Record Management</div>
+      </div>
+      <p class="text-muted small mb-3">
+        These are the exact CRUD operations required by the exam.
+      </p>
+
+      <div class="row g-3">
+        <!-- Feature 5 -->
+        <div class="col-12 col-lg-4">
+          <a href="/dadd/add" class="text-decoration-none text-reset d-block h-100">
+            <div class="cardx h-100 card-feature">
+              <div class="card-body">
+                <span class="badge badge-soft b-blue">Feature 5</span>
+                <h5 class="mt-2 mb-1">Add DADD Record</h5>
+                <p class="text-muted mb-0">
+                  <span class="pill pill-insert">INSERT</span>
+                  Add a new DADD record for a country (next decade).
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="col-12 col-lg-4">
+          <a href="/dadd/update" class="text-decoration-none text-reset d-block h-100">
+            <div class="cardx h-100 card-feature">
+              <div class="card-body">
+                <span class="badge badge-soft b-blue">Feature 6</span>
+                <h5 class="mt-2 mb-1">Update DADD Record</h5>
+                <p class="text-muted mb-0">
+                  <span class="pill pill-update">UPDATE</span>
+                  Update DADD by country + decade (existing record).
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Feature 7 -->
+        <div class="col-12 col-lg-4">
+          <a href="/dadd/delete" class="text-decoration-none text-reset d-block h-100">
+            <div class="cardx h-100 card-feature">
+              <div class="card-body">
+                <span class="badge badge-soft b-orange">Feature 7</span>
+                <h5 class="mt-2 mb-1">Delete DADD Records</h5>
+                <p class="text-muted mb-0">
+                  <span class="pill pill-delete">DELETE</span>
+                  Delete DADD records in a decade range (by country).
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <hr class="my-4">
+
+      <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-outline-secondary btn-sm" href="/feature8">Open Analytics (Feature 8)</a>
+        <a class="btn btn-primary btn-sm" href="/">Back to Dashboard</a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

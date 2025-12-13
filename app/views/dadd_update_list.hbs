@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+
+    <p><a href="/">← Back to Home</a></p>
+
+    <h2>Filter DADD Records</h2>
+
+    <form method="get" action="/dadd/update">
+      <p>
+        <label for="country_id">Country:</label>
+        <select name="country_id" id="country_id">
+          <option value="">-- Select country --</option>
+          {{#each countries}}
+            <option value="{{this.country_id}}"
+              {{#ifEquals this.country_id ../selectedCountry}}selected{{/ifEquals}}>
+              {{this.country_name}} (ID: {{this.country_id}})
+            </option>
+          {{/each}}
+        </select>
+      </p>
+
+      <p>
+        <label for="decade_id">Decade:</label>
+        <select name="decade_id" id="decade_id">
+          <option value="">-- Select decade --</option>
+          {{#each decades}}
+            <option value="{{this.decade_id}}"
+              {{#ifEquals this.decade_id ../selectedDecade}}selected{{/ifEquals}}>
+              {{this.decade_id}}
+            </option>
+          {{/each}}
+        </select>
+      </p>
+
+      <p>
+        <button type="submit">Show Records</button>
+      </p>
+    </form>
+
+    <hr>
+
+    <h2>Records</h2>
+
+    {{#if records.length}}
+      <table border="1" cellpadding="4" cellspacing="0">
+        <tr>
+          <th>DADD ID</th>
+          <th>Country</th>
+          <th>Decade</th>
+          <th>DADD Value</th>
+          <th>Action</th>
+        </tr>
+        {{#each records}}
+          <tr>
+            <td>{{this.dadd_id}}</td>
+            <td>{{this.country_name}}</td>
+            <td>{{this.decade_id}}</td>
+            <td>{{this.dadd_value}}</td>
+            <td>
+              <a href="/dadd/update/{{this.dadd_id}}">Edit</a>
+            </td>
+          </tr>
+        {{/each}}
+      </table>
+    {{else}}
+      <p><em>No records for this filter.</em></p>
+    {{/if}}
+
+  </body>
+</html>

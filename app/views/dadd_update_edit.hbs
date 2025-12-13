@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+
+    <p><a href="/dadd/update">← Back to DADD list</a></p>
+
+    {{#if message}}
+      <p style="color:red;"><strong>{{message}}</strong></p>
+    {{/if}}
+
+    <h2>Editing DADD ID: {{record.dadd_id}}</h2>
+
+    <p>
+      <strong>Country:</strong> {{record.country_name}} (ID: {{record.country_id}})
+      <br>
+      <strong>Decade:</strong> {{record.decade_id}}
+    </p>
+
+    <form method="post" action="/dadd/update/{{record.dadd_id}}">
+      <p>
+        <label for="dadd_value">DADD Value:</label>
+        <input
+          type="number"
+          step="0.0001"
+          id="dadd_value"
+          name="dadd_value"
+          value="{{record.dadd_value}}"
+          required>
+      </p>
+
+      <p>
+        <button type="submit">Save Changes</button>
+      </p>
+    </form>
+
+  </body>
+</html>

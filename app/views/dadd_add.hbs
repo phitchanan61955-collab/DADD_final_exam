@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+
+    <p><a href="/">← Back to Home</a></p>
+
+    {{#if message}}
+      <p style="color:red;"><strong>{{message}}</strong></p>
+    {{/if}}
+
+    <form method="post" action="/dadd/add">
+      <p>
+        <label for="country_id">Country:</label>
+        <select name="country_id" id="country_id" required>
+          <option value="">-- Select country --</option>
+          {{#each countries}}
+            <option value="{{this.country_id}}">
+              {{this.country_name}} (ID: {{this.country_id}})
+            </option>
+          {{/each}}
+        </select>
+      </p>
+
+      <p>
+        <label for="decade_id">Decade:</label>
+        <select name="decade_id" id="decade_id" required>
+          <option value="">-- Select decade --</option>
+          {{#each decades}}
+            <option value="{{this.decade_id}}">
+              {{this.decade_id}}
+            </option>
+          {{/each}}
+        </select>
+      </p>
+
+      <p>
+        <label for="dadd_value">DADD Value:</label>
+        <input 
+          type="number" 
+          step="0.0001" 
+          id="dadd_value" 
+          name="dadd_value" 
+          required>
+      </p>
+
+      <p>
+        <button type="submit">Save DADD Record</button>
+      </p>
+    </form>
+
+  </body>
+</html>

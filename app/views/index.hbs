@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DADD Dashboard</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- YOUR CSS -->
+  <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <div class="hero p-4 p-md-5 mb-4 mt-3">
+    <div class="d-flex flex-column flex-md-row justify-content-between gap-3">
+      <div>
+        <h1 class="fw-bold mb-1">DADD Analytics Dashboard</h1>
+        <p class="text-muted mb-0">Country trends • Region insights • Decade summaries</p>
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <a class="btn btn-primary btn-sm" href="/feature8">Open Analytics</a>
+          <a class="btn btn-outline-secondary btn-sm" href="/feature4">Search Country</a>
+          <a class="btn btn-outline-secondary btn-sm" href="/admin">Admin</a>
+        </div>
+      </div>
+      <div class="text-md-end">
+        <div class="text-muted small">Status</div>
+        <div class="d-flex justify-content-md-end flex-wrap gap-2 mt-1">
+    
+          <span class="badge badge-soft b-indigo">v1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <h4 class="section-title mb-0">Features</h4>
+  <div class="soft-divider"></div>
+
+  <!-- ===================== -->
+  <!-- ANALYTICS GROUP -->
+  <!-- ===================== -->
+  <div class="feature-section analytics">
+  <div class="section-header">
+    <h5 class="mb-1">Analytics Dashboard</h5>
+    <p class="text-muted small mb-0">
+        Explore DADD trends, regional comparisons, and decade summaries.
+    </p>
+  </div>
+
+  <div class="row g-3 mb-4">
+    <!-- Feature 1 -->
+   <div class="col-12 col-md-6 col-xl-6">
+  <div class="cardx h-100 position-relative">
+    <div class="card-body">
+      <span class="badge badge-soft b-blue">Feature 1</span>
+      <h5 class="mt-2 mb-1">Country Trend by Decade</h5>
+      <p class="text-muted mb-0">
+        Select a country → view DADD values over decades (sorted DESC).
+      </p>
+      <a href="/feature1" class="stretched-link" aria-label="Open Feature 1: Country trend by decade"></a>
+    </div>
+  </div>
+</div>
+
+    <!-- Feature 2 -->
+    <div class="col-12 col-md-6 col-xl-6">
+      <div class="cardx h-100 position-relative">
+        <div class="card-body">
+          <span class="badge badge-soft b-indigo">Feature 2</span>
+          <h5 class="mt-2 mb-1">Sub-Region &amp; Decade</h5>
+          <p class="text-muted mb-0">
+            Filter sub-region + decade → compare patterns across countries.
+          </p>
+          <a href="/feature2" class="stretched-link" aria-label="Open Feature 2"></a>
+        </div>
+      </div>
+    </div>
+
+<!-- Feature 3 -->
+<div class="col-12 col-md-6 col-xl-6">
+  <div class="cardx h-100 position-relative">
+    <div class="card-body">
+      <span class="badge badge-soft b-indigo">Feature 3</span>
+      <h5 class="mt-2 mb-1">
+        Region &amp; Decade
+      </h5>
+      <p class="text-muted mb-0">
+        View sub-regions and their <strong>average DADD</strong>
+        in a selected region and decade.
+      </p>
+
+      <!-- ⭐ จุดสำคัญ -->
+      <a href="/feature3"
+         class="stretched-link"
+         aria-label="Region & Decade (Sub-Region Average DADD)">
+      </a>
+    </div>
+  </div>
+</div>
+
+    <!-- Feature 8 -->
+    <div class="col-12 col-md-6 col-xl-6">
+      <div class="cardx h-100 position-relative">
+        <div class="card-body">
+          <span class="badge badge-soft b-indigo">Feature 8</span>
+          <h5 class="mt-2 mb-1">Summary &amp; Trend</h5>
+          <p class="text-muted mb-0">
+            Overview dashboard → long-term trend across decades.
+          </p>
+          <a href="/feature8" class="stretched-link" aria-label="Open Feature 8"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- ===================== -->
+  <!-- SEARCH GROUP -->
+  <!-- ===================== -->
+  <div class="feature-section analytics">
+  <div class="section-header">
+    <h5 class="mb-1">Search Country</h5>
+  </div>
+  <p class="text-muted small mb-3">
+    Find a country instantly and show the latest available decade result.
+  </p>
+
+  <div class="row g-3 mb-4">
+    <!-- Feature 4 -->
+    <div class="col-12 col-md-6 col-xl-6">
+      <div class="cardx h-100 position-relative">
+        <div class="card-body">
+          <span class="badge badge-soft b-orange">Feature 4</span>
+          <div class="section-header"></div>
+          <h5 class="mt-2 mb-1">Search Country</h5>
+          <p class="text-muted mb-0">
+            Search a country → show latest decade + DADD value.
+          </p>
+          <a href="/feature4" class="stretched-link" aria-label="Open Feature 8"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> <!-- /container -->
+</body>
+</html>
+
