@@ -114,6 +114,7 @@ http://localhost:8080
 ![ER Diagram](ER%20Diagram.png)
 
 ### 6.ETL Process (Extract – Transform – Load)
+
 This project includes a complete ETL workflow implemented using SQL scripts.
 Data Sources
  - data1.csv
@@ -128,58 +129,90 @@ The ETL process is implemented in the file:
    /sql/ETL.sql
 
 ```
-  The workflow consists of the following steps:
-      1. Extract
-        - Load raw CSV data into staging tables using LOAD DATA INFILE.
-        - Raw data is stored in:
-           - staging_country_raw
-           - staging_dadd_raw
-      2. Transform
-       - Clean and normalize country names.
-       - Remove invalid or empty values.
-       - Convert year values into decade-based records.
-       - Resolve relationships between countries, regions, and decades.
-      3.Load
-      - Insert cleaned data into normalized tables:
-      - COUNTRY
-      -  REGION
-      -  SUB_REGION
-      -  INTERMEDIATE_REGION
-      -  DECADE
-      - DADD_RECORD
-      All transformation steps are documented directly in the SQL script using comments.
+ 
+The workflow consists of the following steps:
+#### 1. Extract
+
+- Load raw CSV data into staging tables using `LOAD DATA INFILE`
+- Raw data is stored in:
+  - `staging_country_raw`
+  - `staging_dadd_raw`
+
+
+#### 2. Transform
+
+- Clean and normalize country names
+- Remove invalid or empty values
+- Convert year values into decade-based records
+- Resolve relationships between countries, regions, and decades
+
+
+#### 3. Load
+
+- Insert cleaned data into normalized tables:
+  - `COUNTRY`
+  - `REGION`
+  - `SUB_REGION`
+  - `INTERMEDIATE_REGION`
+  - `DECADE`
+  - `DADD_RECORD`
+
+
+All transformation steps are documented directly in the SQL script using comments.
 --- 
-###7. Web Application Features
-    The web application is implemented using Express.js, Handlebars (HBS), and MySQL, following a three-tier architecture.
-    Feature 1–4: Data Query & Analysis
-      - Feature 1: View DADD trends by country across decades
-      - Feature 2: View countries in a selected sub-region and decade
-      - Feature 3: View average DADD values by sub-region within a region
-      - Feature 4: Search country by name and display DADD value for the most recent decade
-These features use real SQL queries executed against the normalized database.
---- 
-###8. Admin Panel & CRUD Features (Feature 5–7)
-    The system includes an Admin Panel for managing master data and DADD records.
-    Master Data Management
-      - Region Management
-      - Sub-Region Management
-      - Intermediate Region Management
-These tables support data integrity and analytical queries.
-CRUD Features
+### 7. Web Application Features
+
+The web application is implemented using **Express.js**, **Handlebars (HBS)**, and **MySQL**, following a **three-tier architecture**.
+
+#### Feature 1–4: Data Query & Analysis
+
+- **Feature 1:** View DADD trends by country across decades  
+- **Feature 2:** View countries in a selected sub-region and decade  
+- **Feature 3:** View average DADD values by sub-region within a region  
+- **Feature 4:** Search country by name and display the DADD value for the most recent decade  
+
+All features execute real SQL queries directly against the **normalized database**.
+
+---
+
+### 8. Admin Panel & CRUD Features (Feature 5–7)
+
+The system includes an **Admin Panel** for managing master data and DADD records.
+
+#### Master Data Management
+
+- Region Management  
+- Sub-Region Management  
+- Intermediate Region Management  
+
+These reference tables support **data integrity** and **analytical queries**.
+
+#### CRUD Features (Exam Required)
+
 The following features are implemented exactly as required by the exam specification:
-      - Feature 5 (INSERT):
-        Add a new DADD record for a selected country and decade.
-      - Feature 6 (UPDATE):
-        Update an existing DADD value by country and decade.
-      - Feature 7 (DELETE):
-        Delete DADD records within a selected decade range for a country.
-All CRUD operations interact directly with the normalized database tables.
+
+- **Feature 5 (INSERT):**  
+  Add a new DADD record for a selected country and decade.
+
+- **Feature 6 (UPDATE):**  
+  Update an existing DADD value by country and decade.
+
+- **Feature 7 (DELETE):**  
+  Delete DADD records within a selected decade range for a country.
+
+All CRUD operations interact directly with the **normalized database tables**.
+
 --- 
 
-###9. Feature 8: Additional Analytics (Optional Feature)
-  An additional analytics page is implemented to provide extended insights based on DADD data.
---- 
-###10. Project Structure
+### 9. Feature 8: Additional Analytics (Optional Feature)
+
+An additional analytics page is implemented to provide extended insights based on DADD data.  
+This feature demonstrates further analytical capabilities beyond the required exam features.
+
+---
+
+### 10. Project Structure
+
           DADD_final_exam/
           │
           ├── app/                 # Express web application
@@ -198,7 +231,23 @@ All CRUD operations interact directly with the normalized database tables.
           ├── .env
           └── README.md
 --- 
+### 11. Notes for Evaluation
 
+- The database schema is designed in accordance with **1NF, 2NF, and 3NF** normalization principles.
+- All application features execute **real SQL queries** against the normalized database (no mock or hard-coded data).
+- The entire system can be launched using only the following commands:
+  ```bash
+  git clone <repository-url>
+  docker compose up
+--- 
+### 12. Conclusion
+
+This project demonstrates a complete end-to-end workflow, including:
+
+- Database design and normalization in accordance with 1NF, 2NF, and 3NF principles
+- ETL processing using SQL to transform raw CSV data into structured and normalized tables
+- Backend web application development using Express.js and Handlebars (HBS)
+- Containerized deployment using Docker and Docker Compose
 
 
 
